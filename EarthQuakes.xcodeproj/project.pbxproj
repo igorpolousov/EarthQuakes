@@ -6,6 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C211F8C42D16E35900003A60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8C12D16E35900003A60 /* ContentView.swift */; };
+		C211F8C52D16E35900003A60 /* EarthQuakesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8C22D16E35900003A60 /* EarthQuakesApp.swift */; };
+		C211F8C62D16E35900003A60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C211F8BE2D16E35900003A60 /* Preview Assets.xcassets */; };
+		C211F8C72D16E35900003A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C211F8C02D16E35900003A60 /* Assets.xcassets */; };
+		C211F8CA2D16E36400003A60 /* EarthQuakesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8C82D16E36400003A60 /* EarthQuakesTests.swift */; };
+		C211F8CE2D16E36800003A60 /* EarthQuakesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8CB2D16E36800003A60 /* EarthQuakesUITests.swift */; };
+		C211F8CF2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8CC2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift */; };
+		C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D32D1AEDCE00003A60 /* Quake.swift */; };
+		C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C211F8A22D16E34B00003A60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,25 +39,16 @@
 		C211F8912D16E34900003A60 /* EarthQuakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthQuakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C211F8A12D16E34B00003A60 /* EarthQuakesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C211F8AB2D16E34B00003A60 /* EarthQuakesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarthQuakesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C211F8BE2D16E35900003A60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C211F8C02D16E35900003A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C211F8C12D16E35900003A60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C211F8C22D16E35900003A60 /* EarthQuakesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesApp.swift; sourceTree = "<group>"; };
+		C211F8C82D16E36400003A60 /* EarthQuakesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesTests.swift; sourceTree = "<group>"; };
+		C211F8CB2D16E36800003A60 /* EarthQuakesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesUITests.swift; sourceTree = "<group>"; };
+		C211F8CC2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C211F8D32D1AEDCE00003A60 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
+		C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C211F8932D16E34900003A60 /* EarthQuakes */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EarthQuakes;
-			sourceTree = "<group>";
-		};
-		C211F8A42D16E34B00003A60 /* EarthQuakesTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EarthQuakesTests;
-			sourceTree = "<group>";
-		};
-		C211F8AE2D16E34B00003A60 /* EarthQuakesUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EarthQuakesUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C211F88E2D16E34900003A60 /* Frameworks */ = {
@@ -75,9 +78,9 @@
 		C211F8882D16E34900003A60 = {
 			isa = PBXGroup;
 			children = (
-				C211F8932D16E34900003A60 /* EarthQuakes */,
-				C211F8A42D16E34B00003A60 /* EarthQuakesTests */,
-				C211F8AE2D16E34B00003A60 /* EarthQuakesUITests */,
+				C211F8C32D16E35900003A60 /* EarthQuakes */,
+				C211F8C92D16E36400003A60 /* EarthQuakesTests */,
+				C211F8CD2D16E36800003A60 /* EarthQuakesUITests */,
 				C211F8922D16E34900003A60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +93,68 @@
 				C211F8AB2D16E34B00003A60 /* EarthQuakesUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C211F8BF2D16E35900003A60 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C211F8BE2D16E35900003A60 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C211F8C32D16E35900003A60 /* EarthQuakes */ = {
+			isa = PBXGroup;
+			children = (
+				C211F8C22D16E35900003A60 /* EarthQuakesApp.swift */,
+				C211F8D02D1AE86D00003A60 /* Models */,
+				C211F8D12D1AE87A00003A60 /* Views */,
+				C211F8D22D1AE88A00003A60 /* Resources */,
+				C211F8BF2D16E35900003A60 /* Preview Content */,
+				C211F8C02D16E35900003A60 /* Assets.xcassets */,
+				C211F8C12D16E35900003A60 /* ContentView.swift */,
+			);
+			path = EarthQuakes;
+			sourceTree = "<group>";
+		};
+		C211F8C92D16E36400003A60 /* EarthQuakesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C211F8C82D16E36400003A60 /* EarthQuakesTests.swift */,
+			);
+			path = EarthQuakesTests;
+			sourceTree = "<group>";
+		};
+		C211F8CD2D16E36800003A60 /* EarthQuakesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C211F8CB2D16E36800003A60 /* EarthQuakesUITests.swift */,
+				C211F8CC2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift */,
+			);
+			path = EarthQuakesUITests;
+			sourceTree = "<group>";
+		};
+		C211F8D02D1AE86D00003A60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C211F8D32D1AEDCE00003A60 /* Quake.swift */,
+				C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C211F8D12D1AE87A00003A60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C211F8D22D1AE88A00003A60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +171,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				C211F8932D16E34900003A60 /* EarthQuakes */,
 			);
 			name = EarthQuakes;
 			packageProductDependencies = (
@@ -130,9 +192,6 @@
 			dependencies = (
 				C211F8A32D16E34B00003A60 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				C211F8A42D16E34B00003A60 /* EarthQuakesTests */,
-			);
 			name = EarthQuakesTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +211,6 @@
 			);
 			dependencies = (
 				C211F8AD2D16E34B00003A60 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				C211F8AE2D16E34B00003A60 /* EarthQuakesUITests */,
 			);
 			name = EarthQuakesUITests;
 			packageProductDependencies = (
@@ -212,6 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C211F8C62D16E35900003A60 /* Preview Assets.xcassets in Resources */,
+				C211F8C72D16E35900003A60 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C211F8C42D16E35900003A60 /* ContentView.swift in Sources */,
+				C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */,
+				C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */,
+				C211F8C52D16E35900003A60 /* EarthQuakesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C211F8CA2D16E36400003A60 /* EarthQuakesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C211F8CE2D16E36800003A60 /* EarthQuakesUITests.swift in Sources */,
+				C211F8CF2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
