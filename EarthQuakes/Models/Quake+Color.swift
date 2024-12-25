@@ -10,6 +10,7 @@ import SwiftUI
 // An extension that adds a SwiftUI color property representing the quake's magnitude.
 
 extension Quake {
+    /// The color which corresponds with the quake's magnitude. Это цвет, который будет соотвествовать магнитуде землетресения
     var color: Color {
         switch magnitude {
         case 0..<1:
