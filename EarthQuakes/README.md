@@ -16,9 +16,16 @@
 
 ## Файлы в приложении разбиты по их назначению в группы: Models, Views, Resources.
 
-##Папка Models содержит: 
-Два файла Quake.swift  - содержит структуру Quake в которой представлены свойства по землетрясению - representing quake data
+##Папка Models стартового проекта содержит: 
+Два файла:
+Quake.swift  - содержит структуру Quake в которой представлены свойства по землетрясению - representing quake data
 Quake+Color.swift - содержит расширение к структуре Quake с цветами
+
+## Папка Views стартового проекта содержит:
+Три файла содержащие SwiftUI Structures с протоколом View, так что при создании файлов будем использовать New file from Template->SwiftUI View: 
+Quakes.swift - 
+QuakeRow.swift - 
+QuakeMagnitude.swift - 
 
  Section 1: Decode Earthquake data 
 USGS предоставляет данные в специальном JSON формате - GeoJSON.  Пример GeoJSON  информации включает в себя:

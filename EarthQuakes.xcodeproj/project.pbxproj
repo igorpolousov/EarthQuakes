@@ -17,6 +17,9 @@
 		C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D32D1AEDCE00003A60 /* Quake.swift */; };
 		C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */; };
 		C211F8D82D1C0A5600003A60 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C211F8D72D1C0A5600003A60 /* README.md */; };
+		C211F8DA2D1C1B3300003A60 /* Quakes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D92D1C1B3300003A60 /* Quakes.swift */; };
+		C211F8DC2D1C1B6100003A60 /* QuakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8DB2D1C1B6100003A60 /* QuakeRow.swift */; };
+		C211F8DE2D1C1B7D00003A60 /* QuakeMagnitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8DD2D1C1B7D00003A60 /* QuakeMagnitude.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		C211F8D32D1AEDCE00003A60 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
 		C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+Color.swift"; sourceTree = "<group>"; };
 		C211F8D72D1C0A5600003A60 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C211F8D92D1C1B3300003A60 /* Quakes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quakes.swift; sourceTree = "<group>"; };
+		C211F8DB2D1C1B6100003A60 /* QuakeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeRow.swift; sourceTree = "<group>"; };
+		C211F8DD2D1C1B7D00003A60 /* QuakeMagnitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeMagnitude.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,9 @@
 		C211F8D12D1AE87A00003A60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C211F8D92D1C1B3300003A60 /* Quakes.swift */,
+				C211F8DB2D1C1B6100003A60 /* QuakeRow.swift */,
+				C211F8DD2D1C1B7D00003A60 /* QuakeMagnitude.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,7 +309,10 @@
 			files = (
 				C211F8C42D16E35900003A60 /* ContentView.swift in Sources */,
 				C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */,
+				C211F8DE2D1C1B7D00003A60 /* QuakeMagnitude.swift in Sources */,
 				C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */,
+				C211F8DA2D1C1B3300003A60 /* Quakes.swift in Sources */,
+				C211F8DC2D1C1B6100003A60 /* QuakeRow.swift in Sources */,
 				C211F8C52D16E35900003A60 /* EarthQuakesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
