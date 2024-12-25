@@ -16,6 +16,7 @@
 		C211F8CF2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8CC2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift */; };
 		C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D32D1AEDCE00003A60 /* Quake.swift */; };
 		C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */; };
+		C211F8D82D1C0A5600003A60 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C211F8D72D1C0A5600003A60 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C211F8CC2D16E36800003A60 /* EarthQuakesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthQuakesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C211F8D32D1AEDCE00003A60 /* Quake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quake.swift; sourceTree = "<group>"; };
 		C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quake+Color.swift"; sourceTree = "<group>"; };
+		C211F8D72D1C0A5600003A60 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				C211F8BF2D16E35900003A60 /* Preview Content */,
 				C211F8C02D16E35900003A60 /* Assets.xcassets */,
 				C211F8C12D16E35900003A60 /* ContentView.swift */,
+				C211F8D72D1C0A5600003A60 /* README.md */,
 			);
 			path = EarthQuakes;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C211F8D82D1C0A5600003A60 /* README.md in Resources */,
 				C211F8C62D16E35900003A60 /* Preview Assets.xcassets in Resources */,
 				C211F8C72D16E35900003A60 /* Assets.xcassets in Resources */,
 			);
