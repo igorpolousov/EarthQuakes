@@ -28,19 +28,19 @@ Quake+Color.swift - содержит расширение к структуре 
 
 ## Разработчики максимально разбили интерфейс на отдельные элементы и разложили из по разным файлам и расширениям  чтобы такое простое приложение можно было просто читать. Очень интересно аналогичным способом сделать в UIKit в коде  - есть ли, как говорится "выхлоп" в этом SwiftUI с его View in Structs, opaque types, view builder, wrapper и прочим - или это маркетинг чтобы поддержать акции Apple - вот мы делаем какой-то новый продукт? 
 
-## 9 файлов для таблицы и трех кнопок))
+## 9 файлов для таблицы и четырёх кнопок))
 
-Quakes.swift - 
-QuakeRow.swift - 
-QuakeMagnitude.swift - 
+Quakes.swift - Main screen view + extension with computed properties and functions
+QuakeRow.swift -  View for row in  Quakes List view
+QuakeMagnitude.swift - View for QuakeRow
 
 ToolbarContent folder:
-Quakes+Toolbar.swift - по названию понятно, что это расширение для струтуры в файле Quakes 
-SelectButton.swift - 
-EditButton.swift - 
-RefreshButton.swift - 
-ToobarStatus.swift - 
-DeleteButton.swift - 
+Quakes+Toolbar.swift - extension for Quakes with ToolBarBuilder
+SelectButton.swift -  Enum Select mode button + Select Button View
+EditButton.swift - View
+RefreshButton.swift - View
+ToobarStatus.swift - View
+DeleteButton.swift - View
 
  Section 1: Decode Earthquake data 
 USGS предоставляет данные в специальном JSON формате - GeoJSON.  Пример GeoJSON  информации включает в себя:

@@ -40,9 +40,9 @@ struct Quakes: View {
                 .onDelete(perform: deleteQuakes)
             }
             .listStyle(.inset)
-            .navigationTitle(title)
-            .toolbar(content: toolbarContent)
-            .environment(\.editMode, $editMode)
+            .navigationTitle(title) // See extension below
+            .toolbar(content: toolbarContent) // Quakes+Toolbar
+            .environment(\.editMode, $editMode) // Runs edit mode for rows
             .refreshable {
                 fetchQuakes()
             }
