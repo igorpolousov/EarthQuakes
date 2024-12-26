@@ -25,6 +25,7 @@
 		C211F8E72D1D684800003A60 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8E62D1D684800003A60 /* RefreshButton.swift */; };
 		C211F8E92D1D685F00003A60 /* ToolbarStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8E82D1D685F00003A60 /* ToolbarStatus.swift */; };
 		C211F8EB2D1D688C00003A60 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EA2D1D688C00003A60 /* DeleteButton.swift */; };
+		C211F8EF2D1D85C100003A60 /* QuakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EE2D1D85C100003A60 /* QuakeError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C211F8E62D1D684800003A60 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		C211F8E82D1D685F00003A60 /* ToolbarStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStatus.swift; sourceTree = "<group>"; };
 		C211F8EA2D1D688C00003A60 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		C211F8EE2D1D85C100003A60 /* QuakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				C211F8D32D1AEDCE00003A60 /* Quake.swift */,
 				C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */,
+				C211F8EE2D1D85C100003A60 /* QuakeError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				C211F8E92D1D685F00003A60 /* ToolbarStatus.swift in Sources */,
 				C211F8E12D1D680900003A60 /* Quakes+Toolbar.swift in Sources */,
 				C211F8EB2D1D688C00003A60 /* DeleteButton.swift in Sources */,
+				C211F8EF2D1D85C100003A60 /* QuakeError.swift in Sources */,
 				C211F8E72D1D684800003A60 /* RefreshButton.swift in Sources */,
 				C211F8DC2D1C1B6100003A60 /* QuakeRow.swift in Sources */,
 				C211F8C52D16E35900003A60 /* EarthQuakesApp.swift in Sources */,
