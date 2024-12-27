@@ -10,27 +10,23 @@ import XCTest
 
 final class EarthQuakesTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGeoJSONDecoderDecodesTest() throws {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .millisecondsSince1970 // step 13
+        let quake = try decoder.decode(Quake.self, from: testFeature_nc73649170)
+        
+        XCTAssertEqual(quake.code, "73649170")
+        
+        let expectedSeconds = TimeInterval(1636129710550) / 1000 // see comments below
+        /*
+         GeoJSON format stores the time of the quake as “milliseconds since the epoch.” A TimeInterval represents a number of seconds. So, you divide the time interval by 1000 to make sure that you compare the same units.
+         */
+        let decodedSeconds = quake.time.timeIntervalSince1970
+        
+        XCTAssertEqual(expectedSeconds, decodedSeconds, accuracy: 0.00001)
+        
+        XCTAssertEqual(quake.tsunami, 0)
+        
     }
 
 }

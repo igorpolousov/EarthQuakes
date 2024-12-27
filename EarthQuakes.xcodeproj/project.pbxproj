@@ -26,6 +26,7 @@
 		C211F8E92D1D685F00003A60 /* ToolbarStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8E82D1D685F00003A60 /* ToolbarStatus.swift */; };
 		C211F8EB2D1D688C00003A60 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EA2D1D688C00003A60 /* DeleteButton.swift */; };
 		C211F8EF2D1D85C100003A60 /* QuakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EE2D1D85C100003A60 /* QuakeError.swift */; };
+		C211F8F12D1EE8A000003A60 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F02D1EE8A000003A60 /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C211F8E82D1D685F00003A60 /* ToolbarStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStatus.swift; sourceTree = "<group>"; };
 		C211F8EA2D1D688C00003A60 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		C211F8EE2D1D85C100003A60 /* QuakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeError.swift; sourceTree = "<group>"; };
+		C211F8F02D1EE8A000003A60 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C211F8C82D16E36400003A60 /* EarthQuakesTests.swift */,
+				C211F8F02D1EE8A000003A60 /* TestData.swift */,
 			);
 			path = EarthQuakesTests;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C211F8CA2D16E36400003A60 /* EarthQuakesTests.swift in Sources */,
+				C211F8F12D1EE8A000003A60 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
