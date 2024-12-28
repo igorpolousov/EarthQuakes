@@ -27,6 +27,14 @@ final class EarthQuakesTests: XCTestCase {
         
         XCTAssertEqual(quake.tsunami, 0)
         
+        XCTAssertEqual(quake.magnitude, 0.34)
+        
+        XCTAssertEqual(quake.place, "5km NW of The Geysers, CA")
+        
+        let url = URL(string: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc73649170.geojson")
+        
+        XCTAssertEqual(quake.detail, url)
+        
     }
 
 }
