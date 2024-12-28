@@ -27,6 +27,7 @@
 		C211F8EB2D1D688C00003A60 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EA2D1D688C00003A60 /* DeleteButton.swift */; };
 		C211F8EF2D1D85C100003A60 /* QuakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8EE2D1D85C100003A60 /* QuakeError.swift */; };
 		C211F8F12D1EE8A000003A60 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F02D1EE8A000003A60 /* TestData.swift */; };
+		C211F8F32D20192D00003A60 /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F22D20192D00003A60 /* GeoJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C211F8EA2D1D688C00003A60 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		C211F8EE2D1D85C100003A60 /* QuakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeError.swift; sourceTree = "<group>"; };
 		C211F8F02D1EE8A000003A60 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		C211F8F22D20192D00003A60 /* GeoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				C211F8D32D1AEDCE00003A60 /* Quake.swift */,
 				C211F8D52D1AEDEF00003A60 /* Quake+Color.swift */,
 				C211F8EE2D1D85C100003A60 /* QuakeError.swift */,
+				C211F8F22D20192D00003A60 /* GeoJSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				C211F8D62D1AEDEF00003A60 /* Quake+Color.swift in Sources */,
 				C211F8E52D1D683300003A60 /* EditButton.swift in Sources */,
 				C211F8E32D1D681D00003A60 /* SelectButton.swift in Sources */,
+				C211F8F32D20192D00003A60 /* GeoJSON.swift in Sources */,
 				C211F8DE2D1C1B7D00003A60 /* QuakeMagnitude.swift in Sources */,
 				C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */,
 				C211F8DA2D1C1B3300003A60 /* Quakes.swift in Sources */,
