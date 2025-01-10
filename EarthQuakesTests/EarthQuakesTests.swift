@@ -50,5 +50,13 @@ final class EarthQuakesTests: XCTestCase {
         
         XCTAssertEqual(expectedSeconds, decodedSeconds, accuracy: 0.00001)
     }
+    
+    // Тестирование получения долготы и широты
+    func testQuakeLocationDecoding() throws {
+        let decoder = JSONDecoder()
+        let decodedData = try decoder.decode(QuakeLocation.self, from: testDetail_hv72783692)
+        XCTAssertEqual(decodedData.latitude,19.2189998626709, accuracy: 0.00000000001)
+        XCTAssertEqual(decodedData.longitude,-155.434173583984, accuracy: 0.00000000001)
+    }
 
 }
