@@ -30,6 +30,7 @@
 		C211F8F32D20192D00003A60 /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F22D20192D00003A60 /* GeoJSON.swift */; };
 		C211F8F52D20354700003A60 /* QuakeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F42D20354700003A60 /* QuakeLocation.swift */; };
 		C23060BA2D32B9CA00E4F9D3 /* HTTPDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23060B92D32B9CA00E4F9D3 /* HTTPDataDownloader.swift */; };
+		C23060BC2D32BE4000E4F9D3 /* QuakeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23060BB2D32BE4000E4F9D3 /* QuakeClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		C211F8F22D20192D00003A60 /* GeoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
 		C211F8F42D20354700003A60 /* QuakeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeLocation.swift; sourceTree = "<group>"; };
 		C23060B92D32B9CA00E4F9D3 /* HTTPDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataDownloader.swift; sourceTree = "<group>"; };
+		C23060BB2D32BE4000E4F9D3 /* QuakeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				C23060B92D32B9CA00E4F9D3 /* HTTPDataDownloader.swift */,
+				C23060BB2D32BE4000E4F9D3 /* QuakeClient.swift */,
 			);
 			path = DataDownloader;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				C211F8F52D20354700003A60 /* QuakeLocation.swift in Sources */,
 				C23060BA2D32B9CA00E4F9D3 /* HTTPDataDownloader.swift in Sources */,
 				C211F8E72D1D684800003A60 /* RefreshButton.swift in Sources */,
+				C23060BC2D32BE4000E4F9D3 /* QuakeClient.swift in Sources */,
 				C211F8DC2D1C1B6100003A60 /* QuakeRow.swift in Sources */,
 				C211F8C52D16E35900003A60 /* EarthQuakesApp.swift in Sources */,
 			);
