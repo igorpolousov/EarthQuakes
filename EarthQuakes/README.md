@@ -170,3 +170,12 @@ GeoJSON - это структурированные данные, поэтому
    7. Сделаем свойство downloader и сделаем к нему инициализатор с default value
    ## интересный момент: обратить внимание как сделано вычисляемое свойство для хранения объектов quake
 cmd+b - проверяем на ошибки и клиент готов.
+
+## Section 1: Тестирование QuakeClient
+   1. Переместим TestData.swift в папку PreviewContent, это позволит сделать доступным данные из этого фалйа как для unit tests, так и для SwiftUI previews.
+   2. Создаём новый файл TestDownloader.swift в папке PreviewContent и создаем TestDownloader class и подпишем его на протокол 
+   3. Добавим Task.sleep(nanoseconds:) в метод httpData(from: URL) для симуляции задержки передачи данных по сети. Возвращать будет testQuakesData
+   4. В EarthQuakesTest.swift добавляем новый тест метод testClientDoesFetchEarthQuakeData()
+   5. Создаем экземпляр класса TestDownloader и используем его при создании QuakeClient
+   6. Получим quakes из клиента и проверим что количество сущностей равно 6
+   7. Запустим тест
