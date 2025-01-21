@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct EarthQuakesApp: App {
+    
+    @StateObject var quakesProvider: QaukesProvider = QaukesProvider()
+    
     var body: some Scene {
         WindowGroup {
             Quakes()
+                .environmentObject(quakesProvider)
         }
     }
 }
