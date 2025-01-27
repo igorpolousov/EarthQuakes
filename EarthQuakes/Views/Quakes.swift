@@ -51,6 +51,10 @@ struct Quakes: View {
             .refreshable {
                  await fetchQuakes()
             }
+            .alert(isPresented: $hasError, error: error) {}
+        }
+        .task {
+            await fetchQuakes()
         }
     }
 }
@@ -100,4 +104,5 @@ extension Quakes {
 //Preview
 #Preview {
     Quakes()
+        .environmentObject(QaukesProvider(client: QuakeClient(downloader: TestDownloader())))
 }
