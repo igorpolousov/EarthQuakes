@@ -27,11 +27,14 @@ struct Quakes: View {
     @AppStorage("lastUpdated")
     var lastUpdated = Date.distantFuture.timeIntervalSince1970
     
-    @State var quakes = staticData //  Data for rows in List view
-    @State var editMode: EditMode = .inactive 
+    //@State var quakes = staticData //  Data for rows in List view
+    @EnvironmentObject var provider: QaukesProvider
+    @State var editMode: EditMode = .inactive
     @State var selectMode: SelectMode = .inactive
     @State var isLoading = false
     @State var selection: Set<String> = []
+    @State private var error: QuakeError?
+    @State private var hasError = true
     
     var body: some View {
         NavigationView {
@@ -46,7 +49,7 @@ struct Quakes: View {
             .toolbar(content: toolbarContent) // Quakes+Toolbar
             .environment(\.editMode, $editMode) // Runs edit mode for rows
             .refreshable {
-                fetchQuakes()
+                 await fetchQuakes()
             }
         }
     }
@@ -66,12 +69,12 @@ extension Quakes {
 
     // Используется для следующей функции
     func deleteQuakes(at offsets: IndexSet) {
-        quakes.remove(atOffsets: offsets)
+        provider.deleteQuakes(atOffsets: offsets)
     }
     // Используется для работы во View
     func deleteQuakes(for codes: Set<String>) {
         var offsetsToDelete: IndexSet = []
-        for (index, element) in quakes.enumerated() {
+        for (index, element) in provider.quakes.enumerated() {
             if codes.contains(element.code) {
                 offsetsToDelete.insert(index)
             }
@@ -80,10 +83,16 @@ extension Quakes {
         selection.removeAll()
     }
     
-    func fetchQuakes() {
+    func fetchQuakes() async {
         isLoading = true
-        self.quakes = staticData
-        lastUpdated = Date().timeIntervalSince1970
+        do {
+            try await provider.fetchQuakes()
+            lastUpdated = Date().timeIntervalSince1970
+        } catch {
+            self.error = error as? QuakeError ?? .unexpectedError(error)
+            self.hasError = true
+        }
+        
         isLoading = false
     }
 }
