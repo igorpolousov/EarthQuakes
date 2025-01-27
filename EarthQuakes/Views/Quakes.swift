@@ -34,7 +34,7 @@ struct Quakes: View {
     @State var isLoading = false
     @State var selection: Set<String> = []
     @State private var error: QuakeError?
-    @State private var hasError = true
+    @State private var hasError = false
     
     var body: some View {
         NavigationView {
