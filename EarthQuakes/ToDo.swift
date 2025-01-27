@@ -9,3 +9,7 @@
 /*
  https://developer.apple.com/tutorials/app-dev-training/building-a-network-test-client
  */
+
+/*
+ @AppStorage("Last updated") - что это и зачем?
+ */

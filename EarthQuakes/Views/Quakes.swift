@@ -39,7 +39,7 @@ struct Quakes: View {
     var body: some View {
         NavigationView {
             List(selection: $selection) {
-                ForEach(quakes) { quake in
+                ForEach(provider.quakes) { quake in
                     QuakeRow(quake: quake)
                 }
                 .onDelete(perform: deleteQuakes)
@@ -89,7 +89,7 @@ extension Quakes {
             try await provider.fetchQuakes()
             lastUpdated = Date().timeIntervalSince1970
         } catch {
-            self.error = error as? QuakeError ?? .unexpectedError(error)
+            self.error = error as? QuakeError ?? .unexpectedError(error: error)
             self.hasError = true
         }
         
