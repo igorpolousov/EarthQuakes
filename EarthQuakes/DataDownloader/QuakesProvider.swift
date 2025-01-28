@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class QaukesProvider: ObservableObject {
     
     @Published var quakes: [Quake] = []
