@@ -1,4 +1,4 @@
-#  EarthQuake Apple tutorials
+#  EarthQuake Apple tutorials Copyright © 2025 Apple Inc. All rights reserved.
 
 Что вообще хочется от этого проекта - почерпнуть что-то новое и полезное))
 
@@ -215,3 +215,117 @@ cmd+b - проверяем на ошибки и клиент готов.
      Посмотрите еще раз как сделано get async throws свойство var quakes в файле QuakeClient
      
      ## Управление структурированной многопоточностью
+     Приложение EarthQuake получает данные из сети асинхронно. Далее в приложении будут сделаны дополнительные сетевые запросы чтобы получить детали каждого землетрясения, точнее будет сделано изменение для клиента QuakeClient чтобы он мог делать множественные сетевые запросы.
+     
+     ### Получение данных с нескольких URL адресов( Fetching data from multiple URLs)
+     Это приложение делает один сетевой запрос для того чтобы получить список землетрясений. Далее в этом приложении будут сделаны изменения которые позволят делать множественные сетевые запросы одновременно! Очень интересно!
+     
+     QuakeCkient использует асинхронные функции и свойства чтобы отложить выполнение кода пока приложение выполняет сетвой зпрос. Пример ниже ожидает выполнения асихронного кода чтобы возвратить список землетрясений.
+     
+     let quakes: [Quake] = try await quakeClient.quakes
+     
+     Далее нам нужно получить детали для каждого землетрясения. Каждая struct Quake содержит свойство detail которое содержит URL. 
+     Допустим у нас есть метод, который может получить quake location для каждого землетрясения
+  
+     func quakeLocation(from url: URL) -> QuakeLocation
+     
+     и мы хотим сделать вызов этого метода параллельно и таким образом чтобы система могла сделать множественные одновременные сетевые запросы. Рассмотрим следующий пример: 
+     
+        let quakes: [Quake] = try await quakeClient.quakes
+        var locations: [QuakeLocation] = []
+        for quake in quakes {
+            let location = await quakeClient.quakeLocation(from: quake.url)
+            locations.append(locations)
+        } 
+
+    Этот код является асинхронным, но все же последовательным. Система откладывает выполнение следующей итерации в цикле. Когда выполнена одно итерация(сетевой запрос) система переходит к выполению следующей итерации цикла, а нм нужен способ чтобы выполнять не только асинхронно, но и многопоточно.
+    
+    Решением является task group выполнять несколько задач параллельно. Система будет выполнять задачи в параллельных потоках. Чтобы создать task group нужно воспользоваться функцией withTaskGroup() или withThrowingTaskGroup(). Поскольку мы используем throwing , то нужно будет пользоваться withThrowingTaskGroup()
+    Функция принимает аргумент с типом данных task result и замыкание и передаёт task group в замыкание. Очень понятно))
+    В примере ниже, группа  - это значение throwingTaskGroup. Внутри замыкания добавляются задания в группу и происходит ожидание, пока они не выполнятся.
+    
+        
+            let quakes: [Quake] = ... // Get an array of quakes.
+            try await withThrowingTaskGroup(of: QuakeLocation.self) { group in
+                var locations: [QuakeLocation] = []
+                for quake in quakes {
+                    group.addTask {
+                        // Work inside this closure is captured as a task.
+                        // The code should return a QuakeLocation.
+                        return try await quakeClient.quakeLocation(from: quake.url)
+                    }
+                }
+                // Wait on a result with group.next().
+                while let location = try await group.next() {
+                    // The constant location is a QuakeLocation.
+                    locations.append(location)
+                }
+            }
+    Task Group добавляет многопоточность в приложение, но многопоточность может привнести вариации(разные варианты) выполнения кода в  приложнеии. Когда инициируются множественные многопоточные сетевые запросы, то отсутсвует контроль в каком порядке будут приходить ответы на запросы. Чтобы понять как это происходит, код выше можно запустить несколько раз(с идентичным вводом данных) и увидеть, что элементы массива locations будут приходить в разном порядке. Swift предлагает использовать actor чтобы избавится от такой непредсказуемости.
+    
+    ### Protecting data with actors/ Защита данных при помощи actor
+    
+    После внесения изменений в клиент, чтобы делать многопоточные запросы, будут сделаны изменения в клиенте, чтобы полявилась возможность делать cache данных quake location, для этого будет использоваться NSCache class, чтобы зарнить данные о локациях.
+    Наличие доступа к сущности класса из множественных параллельных задач может привести к проблеме под названием Data Races.
+    
+    Для примера, допустим что кэширования запросов, делается их подсчёт при помощи класса Counter class:
+    
+        class Counter {
+        var count: Int = 0
+
+
+        func increment() {
+            count = count + 1
+            }
+        } 
+
+    Если добваить этот класс в код с task group, код будет выглядеть так и assert будуе периодически выдавать ошибку
+        
+        try await withThrowingTaskGroup(of: QuakeLocation.self) { group in
+        let count = Counter() // Create a counter object.
+        var locations: [QuakeLocation] = []
+        for quake in quakes {
+            group.addTask {
+                let location = try await provider.location(for: quake.url)
+                // Increment the counter after fetch completes.
+                count.increment() 
+            }
+        }
+        while let location = try await group.next() {
+            locations.append(location)
+        }
+        // This will sometimes fail.
+        assert(counter.count == locations.count) 
+    }
+    
+    Этот пример вызывает increment() из множественных параллельно выполняемых задач, может получиться так, что однвременно будут выполнены 2 задачи, и счётчик увеличит значение только один раз, и один из запросов не будет учтён(посчитан).
+    Можно исправить такой вопрос если добавить счётчик в вызов group.next()
+    Другим вариантом решения данной задачи является использование Swift Actor. Swift Actor позволяет управлять многопоточным доступом к сущности, делая таким образом, чтобы только один поток мог обратиться к сущности в один прмежуток времени. Таким образом имеем , что Actor это thread safe Class data type, который позволяет решить проблему Data Race. Поменяем class Counter на actor Counter 
+
+        actor Counter {
+        var count: Int = 0
+
+
+        func increment() {
+            count = count + 1
+        }
+    }
+
+    ##Компилятор Swift обеспечивает безопасность actor, ограничивая доступ к методам и свойствам actor.
+    Свойство counter является неизменяемым в коде, определенном вне субъекта счетчика, даже если оно объявлено как var. Если вы попытаетесь изменить свойство count вне субъекта счетчика, компилятор выдаст сообщение об ошибке. Вы можете косвенно изменить свойство с помощью методов, определенных внутри counter, таких как increment(). 
+    ###Поскольку метод increment изменяет состояние actor, вы должны использовать ключевое слово await при вызове increment() извне actor.
+
+    let counter = Counter() // Counter is an actor.
+    counter.count = 0 // Error: Can't mutate property.
+    let currentCount = counter.count // Error: Can't synchronously access property.
+    let currentCount = await counter.count // Asynchronous access to the property is allowed.
+    counter.increment() // Error: Can't synchronously call method.
+    await counter.increment() // Asynchronous access to the method is allowed.
+    
+    Требуя асинхронного доступа к внутренним данным, исполнитель может обеспечить одновременный доступ к свойству только для одной задачи
+    
+    Являюсь классом и нахожусь в heap, но имею повадки struct из stack)) Смесь бульдога с носорогом, еще слышал что делают вручную class thread safe путём создания вручную потока и дальнейшее выполение методов класса будет производиться только в этом потоке в одно и тоже время.
+    
+    
+    
+     
