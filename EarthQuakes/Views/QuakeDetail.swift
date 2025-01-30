@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct QuakeDetail: View {
+    
+    var quake: Quake
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    VStack {
+            Text(quake.place)
+                .font(.title3)
+                .bold()
+            Text("\(quake.time.formatted())")
+                .foregroundStyle(Color.secondary)
+        }
     }
 }
 
 #Preview {
-    QuakeDetail()
+    QuakeDetail(quake: Quake.preview)
 }

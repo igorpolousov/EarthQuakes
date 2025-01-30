@@ -21,6 +21,7 @@ struct Quake {
     let detail: URL
     ///  Предупреждение о цунами
     let tsunami: Int
+    var location: QuakeLocation?
 }
 
 extension Quake: Identifiable {
