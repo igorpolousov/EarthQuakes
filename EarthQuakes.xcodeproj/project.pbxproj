@@ -35,6 +35,8 @@
 		C23448EA2D3697B7000B454A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C211F8F02D1EE8A000003A60 /* TestData.swift */; };
 		C23448EC2D3FD03D000B454A /* QuakesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23448EB2D3FD03D000B454A /* QuakesProvider.swift */; };
 		C23448EE2D3FD562000B454A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23448ED2D3FD562000B454A /* ToDo.swift */; };
+		C23448F02D4B7F6D000B454A /* CashEntryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23448EF2D4B7F6D000B454A /* CashEntryObject.swift */; };
+		C23448F22D4B8151000B454A /* NSCashe+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23448F12D4B8151000B454A /* NSCashe+Subscript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		C23448E82D36955F000B454A /* TestDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDownloader.swift; sourceTree = "<group>"; };
 		C23448EB2D3FD03D000B454A /* QuakesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakesProvider.swift; sourceTree = "<group>"; };
 		C23448ED2D3FD562000B454A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		C23448EF2D4B7F6D000B454A /* CashEntryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashEntryObject.swift; sourceTree = "<group>"; };
+		C23448F12D4B8151000B454A /* NSCashe+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCashe+Subscript.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,8 @@
 				C23060B92D32B9CA00E4F9D3 /* HTTPDataDownloader.swift */,
 				C23060BB2D32BE4000E4F9D3 /* QuakeClient.swift */,
 				C23448EB2D3FD03D000B454A /* QuakesProvider.swift */,
+				C23448EF2D4B7F6D000B454A /* CashEntryObject.swift */,
+				C23448F12D4B8151000B454A /* NSCashe+Subscript.swift */,
 			);
 			path = DataDownloader;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				C211F8F32D20192D00003A60 /* GeoJSON.swift in Sources */,
 				C211F8DE2D1C1B7D00003A60 /* QuakeMagnitude.swift in Sources */,
 				C211F8D42D1AEDDC00003A60 /* Quake.swift in Sources */,
+				C23448F22D4B8151000B454A /* NSCashe+Subscript.swift in Sources */,
 				C211F8DA2D1C1B3300003A60 /* Quakes.swift in Sources */,
 				C211F8E92D1D685F00003A60 /* ToolbarStatus.swift in Sources */,
 				C211F8E12D1D680900003A60 /* Quakes+Toolbar.swift in Sources */,
@@ -380,6 +387,7 @@
 				C211F8EF2D1D85C100003A60 /* QuakeError.swift in Sources */,
 				C211F8F52D20354700003A60 /* QuakeLocation.swift in Sources */,
 				C23448EA2D3697B7000B454A /* TestData.swift in Sources */,
+				C23448F02D4B7F6D000B454A /* CashEntryObject.swift in Sources */,
 				C23060BA2D32B9CA00E4F9D3 /* HTTPDataDownloader.swift in Sources */,
 				C23448EE2D3FD562000B454A /* ToDo.swift in Sources */,
 				C211F8E72D1D684800003A60 /* RefreshButton.swift in Sources */,

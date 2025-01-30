@@ -9,6 +9,9 @@ import Foundation
 
 class QuakeClient {
     
+    private let quakeCashe: NSCache<NSString, CashEntryObject> = NSCache()
+    
+    
     var quakes: [Quake] {
         get async throws {
             let data = try await downloader.httpData(from: feedURL)
