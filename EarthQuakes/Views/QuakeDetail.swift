@@ -12,6 +12,7 @@ struct QuakeDetail: View {
     var quake: Quake
     var body: some View {
         VStack {
+            QuakeMagnitude(quake: quake)
             Text(quake.place)
                 .font(.title3)
                 .bold()
