@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct QuakeDetail: View {
-    
+
     var quake: Quake
+    
+    @EnvironmentObject private var quakesProvider: QaukesProvider
+    @State private var location: QuakeLocation? = nil
+    
     @State private var onTapLongLatt: Bool = true
     var body: some View {
         VStack {
@@ -20,7 +24,7 @@ struct QuakeDetail: View {
             Text("\(quake.time.formatted())")
                 .foregroundStyle(Color.secondary)
             
-            if let location = quake.location {
+            if let location = self.location {
                 // Вариант 1
                 VStack {
                     Text(!onTapLongLatt ? "Longitude: \(location.latitude)" : "Latitude: \(location.latitude.formatted(.number.precision(.fractionLength(3))))" )
@@ -31,6 +35,14 @@ struct QuakeDetail: View {
                     onTapLongLatt.toggle()
                 }
                 
+                // Вариант 3( просто сокращенные long and latt)
+//                if let location = quake.location {
+//                        Text("Latitude: \(location.latitude.formatted(.number.precision(.fractionLength(3))))" )
+//
+//                        Text("Latitude: \(location.longitude.formatted(.number.precision(.fractionLength(3))))" )
+//                    }
+
+//                
                 //Вариант 2
 //                if onTapLongLatt == true {
 //                    VStack {

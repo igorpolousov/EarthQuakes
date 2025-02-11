@@ -381,7 +381,7 @@ cmd+b - проверяем на ошибки и клиент готов.
     7. Дождемся выполения каждого задания в группе, метод nextResult() возвращает Result<(Int, QuakeLocation), Error>
     8. Сделаем перебор всех результатов и добавим новые данные для землетрясений
     
-    ## Добавим Detail view
+## Section 1: Добавим Detail view
     1. В папке PreviewContent создадим файл Quake+Preview.swift и расширим quake model чтобы добавить статическую вычисляемую переменную
     2. В паке Views добавим файл QaukeDetail.swift
     3. Добавим quake к DetailView
@@ -399,3 +399,7 @@ cmd+b - проверяем на ошибки и клиент готов.
     2. Добавляем vstack для лейблов 
     3. К Vstack добавляем onTapGesture и перключатель булевой переменной 
     и далее есть два способа: будет меняться значение в тексте(используем тернарный оператор) или будет меняться полностью view, во втором варианте нужно добавить такой же vstack с onTapGesture.
+    
+## Section 2: Display location details - fetch data from internet
+    1. Добавим @EnvironmentObject quakes provider в Detail view, чтобы данные были доступны в этом view сарзу после запуска приложения
+    2. Добавим свойство @State для хранения возможного экземпляра location
