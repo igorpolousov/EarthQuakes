@@ -15,9 +15,15 @@ struct QuakeDetail: View {
     @State private var location: QuakeLocation? = nil
     
     @State private var onTapLongLatt: Bool = true
+    
     var body: some View {
         VStack {
+            if let location = self.location { // if location {}
+                QuakeDetailMap(location: location, tintColor: quake.color).ignoresSafeArea(.container)
+            }
+            
             QuakeMagnitude(quake: quake)
+            
             Text(quake.place)
                 .font(.title3)
                 .bold()
